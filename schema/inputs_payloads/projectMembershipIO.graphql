@@ -1,0 +1,31 @@
+# InviteProjectMembers
+input InviteProjectMembersInput {
+    projectId: ID!
+    emails: [String!]
+}
+type InviteProjectMembersPayload {
+    projectMemberships(
+        first: Int
+        after: String
+        last: Int
+        before: String
+    ): ProjectMembershipConnection
+}
+
+# UpdateProjectMembership
+input UpdateProjectMembershipInput {
+    projectMembershipId: ID!
+    role: ProjectMembershipRole
+}
+type UpdateProjectMembershipPayload {
+    projectMembership: ProjectMembership
+}
+
+# DeleteProjectMembership
+## 招待を断るときやキャンセルする時もこちら
+input DeleteProjectMembershipInput {
+    proejctMemebershipId: ID!
+}
+type DeleteProjectMembershipPayload {
+    projectMembership: ProjectMembership
+}

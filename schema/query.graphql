@@ -1,0 +1,16 @@
+#"""
+# Query
+#
+# @developer: アルファベット順(ドメインの　e.g. => Account, Bxxxx...)に並べてください
+#
+#"""
+
+type Query {
+    """
+    Fetches an object given its ID.
+    """
+    node(id: ID!): Node
+
+    # Account周り
+    currentAccount: Account
+}

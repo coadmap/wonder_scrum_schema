@@ -1,0 +1,36 @@
+"Project Object"
+type Project implements Node & Record {
+    id: ID!
+    title: String!
+
+    "プロジェクト作成者"
+    creator: Account # Accountが辞めた場合はnullになる
+    memberships(
+        first: Int
+        after: String
+        last: Int
+        before: String
+        state: [ProjectMembershipState]
+        role: [ProjectMembershipRole]
+    ): ProjectMembershipConnection!
+    tasks(
+        first: Int
+        after: String
+        last: Int
+        before: String
+        state: [TaskState]
+    ): TaskConnection!
+
+    createdAt: DateTime!
+    updatedAt: DateTime!
+}
+
+type ProjectEdge {
+    cursor: String!
+    node: Project
+}
+
+type ProjectConnection {
+    pageInfo: PageInfo!
+    edges: [ProjectEdge]
+}

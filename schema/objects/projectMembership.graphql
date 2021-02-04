@@ -1,0 +1,34 @@
+"Project Membership Object"
+type ProjectMembership implements Node & Record {
+    id: ID!
+    role: ProjectMembershipRole
+    state: ProjectMembershipState!
+
+    project: Project!
+    account: Account!
+
+    createdAt: DateTime!
+    updatedAt: DateTime!
+}
+
+enum ProjectMembershipRole {
+    OWNER
+    ADMIN
+    GENERAL
+}
+
+enum ProjectMembershipState {
+    INVITING
+    ACTIVE
+    INACTIVE
+}
+
+type ProjectMembershipEdge {
+    cursor: String!
+    node: ProjectMembership
+}
+
+type ProjectMembershipConnection {
+    pageInfo: PageInfo!
+    edges: [ProjectMembershipEdge]
+}

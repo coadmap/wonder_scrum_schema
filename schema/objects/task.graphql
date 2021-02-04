@@ -1,0 +1,32 @@
+"Task Object"
+type Task implements Node & Record {
+    id: ID!
+    name: String!
+    state: TaskState!
+    closed: Boolean!
+
+    "作成者"
+    creator: Account # Accountが辞めた場合はnullになる
+    assignees: AccountConnection!
+
+    createdAt: DateTime!
+    updatedAt: DateTime!
+}
+
+enum TaskState {
+    TO_DO # default
+    THIS_WEEK
+    TODAY
+    DOING
+    DONE
+}
+
+type TaskEdge {
+    cursor: String!
+    node: Task
+}
+
+type TaskConnection {
+    pageInfo: PageInfo!
+    edges: [TaskEdge]
+}

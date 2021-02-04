@@ -1,0 +1,41 @@
+"Account Object"
+type Account implements Node & Record {
+    id: ID!
+    email: String!
+    username: String!
+    avatarUrl: String
+
+    projectInvitations(
+        first: Int
+        after: String
+        last: Int
+        before: String
+    ): ProjectMembershipConnection
+    # こちらは参加しているプロジェクトのみ
+    projects(
+        first: Int
+        after: String
+        last: Int
+        before: String
+    ): ProjectConnection!
+    tasks(
+        first: Int
+        after: String
+        last: Int
+        before: String
+        state: [TaskState!]
+    ): TaskConnection!
+
+    createdAt: DateTime!
+    updatedAt: DateTime!
+}
+
+type AccountEdge {
+    cursor: String!
+    node: Account
+}
+
+type AccountConnection {
+    pageInfo: PageInfo!
+    edges: [AccountEdge]
+}

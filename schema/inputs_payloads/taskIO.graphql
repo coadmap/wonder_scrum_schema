@@ -1,0 +1,21 @@
+# CreateTask
+input CreateTaskInput {
+    name: String!
+    assigneeIds: [ID!]
+    state: TaskState
+}
+type CreateTaskPayload {
+    task: Task
+}
+
+# UpdateTask
+input UpdateTaskInput {
+    taskId: ID!
+    name: String
+    assigneeIds: [ID!]
+    state: TaskState
+    closed: Boolean
+}
+type UpdateTaskPayload {
+    task: Task
+}

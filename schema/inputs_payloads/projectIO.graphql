@@ -1,0 +1,24 @@
+# CreateProject
+input CreateProjectInput {
+    title: String!
+}
+type CreateProjectPayload {
+    project: Project
+}
+
+# UpdateProject
+input UpdateProjectInput {
+    projectId: ID!
+    title: String
+}
+type UpdateProjectPayload {
+    project: Project
+}
+
+# DeleteProject
+input DeleteProjectInput {
+    projectId: ID!
+}
+type DeleteProjectPayload {
+    project: Project
+}

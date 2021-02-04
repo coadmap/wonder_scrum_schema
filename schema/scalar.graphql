@@ -1,0 +1,9 @@
+# 日時関連
+scalar Date
+scalar DateTime
+
+"画像をbase64で扱う"
+scalar EncodedImage
+
+"#なしの16進数カラー(3けたor6ケタ)"
+scalar HexColor

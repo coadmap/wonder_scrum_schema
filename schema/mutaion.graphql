@@ -1,0 +1,24 @@
+#"""
+# Mutation
+#
+# @developer: アルファベット順(ドメインの　e.g. => Account, Bxxx...)に並べてください
+#
+#"""
+
+type Mutation {
+    # Account周り
+    updateAccount(input: UpdateAccountInput!): UpdateAccountPayload
+    deleteAccount(input: DeleteAccountInput!): DeleteAccountPayload
+
+    # Project周り
+    createProject(input: CreateProjectInput!): CreateProjectPayload
+    updateProject(input: UpdateAccountInput!): UpdateProjectPayload
+    deleteProject(input: DeleteProjectInput!): DeleteProjectPayload
+    inviteProjectMembers(input: InviteProjectMembersInput!): InviteProjectMembersPayload
+    updateProjectMembership(input: UpdateProjectMembershipInput!): UpdateProjectMembershipPayload
+    deleteProjcetMembership(input: DeleteProjectMembershipInput!): DeleteProjectMembershipPayload
+
+    # Task周り
+    createTask(input: CreateTaskInput!): CreateTaskPayload
+    updateTask(input: UpdateTaskInput!): UpdateTaskPayload
+}
