@@ -35,3 +35,5 @@ type CreateHogePayload {
 ```
 というように値がラップされたものになる。
 
+## 想定しているER図
+![ER図](https://user-images.githubusercontent.com/12053974/106880866-39b96d80-6720-11eb-906a-17f90e8f231d.jpeg)
