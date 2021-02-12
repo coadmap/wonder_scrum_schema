@@ -7,6 +7,8 @@
 
 type Mutation {
     # Account周り
+    signUpAccount(input: SignUpAccountInput!): SignUpAccountPayload
+    logInAccount(input: LogInAccountInput!): LogInAccountPayload
     updateAccount(input: UpdateAccountInput!): UpdateAccountPayload
     deleteAccount(input: DeleteAccountInput!): DeleteAccountPayload
 
@@ -14,9 +16,15 @@ type Mutation {
     createProject(input: CreateProjectInput!): CreateProjectPayload
     updateProject(input: UpdateAccountInput!): UpdateProjectPayload
     deleteProject(input: DeleteProjectInput!): DeleteProjectPayload
-    inviteProjectMembers(input: InviteProjectMembersInput!): InviteProjectMembersPayload
-    updateProjectMembership(input: UpdateProjectMembershipInput!): UpdateProjectMembershipPayload
-    deleteProjcetMembership(input: DeleteProjectMembershipInput!): DeleteProjectMembershipPayload
+    inviteProjectMembers(
+      input: InviteProjectMembersInput!
+    ): InviteProjectMembersPayload
+    updateProjectMembership(
+      input: UpdateProjectMembershipInput!
+    ): UpdateProjectMembershipPayload
+    deleteProjcetMembership(
+      input: DeleteProjectMembershipInput!
+    ): DeleteProjectMembershipPayload
 
     # Task周り
     createTask(input: CreateTaskInput!): CreateTaskPayload
